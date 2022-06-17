@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+html,
+body,
+#root,
+.App {
+  height: 100%;
+} 
+*/
+
+/*https://www.youtube.com/watch?v=qTGbWfEEnKI */
+/* Mobile LAYOUT: */
+.container {
+  min-height: 100%;
+  display: grid;
+  grid-template:
+    "header" auto
+    "navbar" auto
+    "main" 1fr
+    "aside" auto
+    "footer" auto
+    / auto;
+}
+
+/* Desktop LAYOUT: */
+@media only screen and (min-width: 600px) {
+  .container {
+    grid-template:
+      "header header header" auto
+      "navbar   main    aside" 1fr
+      "navbar footer aside" auto
+      / 100px auto 100px;
+  }
+}
